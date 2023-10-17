@@ -15,6 +15,12 @@ const config: Config = {
       },
     },
     colors: {
+      black: {
+        1: '#050505',
+        2: '#1f1f1f',
+        3: '#2D2D2D',
+        4: '#3A3A3A',
+      },
       grey: {
         dark: '#757575',
         medium: '#e9e9e9',
@@ -22,13 +28,14 @@ const config: Config = {
       },
       white: '#fff',
       purple: '#a445ed',
+      red: '#FF5252',
     },
   },
   darkMode: 'class',
   fontFamily: {
-    sans: ['Inter'],
-    serif: ['Lora'],
-    mono: ['Inconsolata'],
+    sans: 'Inter',
+    serif: 'Lora',
+    mono: 'Inconsolata',
   },
   plugins: [],
 };
