@@ -1,4 +1,4 @@
-import { useFontState } from '@/Providers/FontProvider';
+import { useFontState } from '@/providers/FontProvider';
 import { twMerge } from 'tailwind-merge';
 
 export function FontItem({ font }: { font: string }) {

@@ -1,9 +1,9 @@
 'use client';
 
-import { Search } from '@/Components/Search';
-import { Result } from '@/Components/result/Result';
-import TopBar from '@/Components/top-bar/TopBar';
-import { useFontState } from '@/Providers/FontProvider';
+import { Search } from '@/components/Search';
+import { Result } from '@/components/result/Result';
+import TopBar from '@/components/top-bar/TopBar';
+import { useFontState } from '@/providers/FontProvider';
 import { twMerge } from 'tailwind-merge';
 
 export default function Home() {
