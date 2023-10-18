@@ -20,7 +20,7 @@ const FontContext = createContext<IFontContext>({
 });
 
 export function FontProvider({ children }: { children: ReactNode }) {
-  let [fontFamily, setFontFamily] = useState('sans');
+  let [fontFamily, setFontFamily] = useState('serif');
 
   return (
     <FontContext.Provider value={{ fontFamily, setFontFamily }}>
