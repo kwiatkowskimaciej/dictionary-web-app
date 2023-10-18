@@ -22,7 +22,7 @@ export function Search() {
   }
 
   return (
-    <form className="px-6" onSubmit={handleSubmit}>
+    <form className="px-6 md:px-10 md:mt-6" onSubmit={handleSubmit}>
       <div className="relative">
         <input
           className={twMerge(

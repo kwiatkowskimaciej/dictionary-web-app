@@ -1,6 +1,10 @@
 import { Howl } from 'howler';
 
-export function PlayButton() {
+interface Props {
+  src: string;
+}
+
+export function PlayButton({ src }: Props) {
   const play = (src: string) => {
     const sound = new Howl({
       src,
@@ -11,12 +15,8 @@ export function PlayButton() {
 
   return (
     <div
-      className="w-12 h-12 md:w-[75px] md:h-[75px]"
-      onClick={() =>
-        play(
-          'https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3'
-        )
-      }
+      className="w-12 h-12 md:w-[75px] md:h-[75px] cursor-pointer"
+      onClick={() => play(src)}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
         <g fill="#A445ED" fillRule="evenodd">
