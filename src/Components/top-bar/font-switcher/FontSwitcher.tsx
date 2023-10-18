@@ -9,7 +9,7 @@ export function FontSwitcher() {
   let [open, setOpen] = useState(false);
   return (
     <div
-      className="relative flex items-center gap-4"
+      className="relative flex items-center gap-4 text-sm cursor-pointer md:text-lg"
       onClick={() => setOpen(!open)}
     >
       <span className="font-bold capitalize">

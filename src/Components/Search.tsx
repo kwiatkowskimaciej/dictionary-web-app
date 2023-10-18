@@ -26,7 +26,7 @@ export function Search() {
       <div className="relative">
         <input
           className={twMerge(
-            'h-12 md:h-16 w-full rounded-2xl bg-grey-light p-6 font-bold text-black-3 focus:outline-purple dark:bg-black-2 dark:text-white dark:placeholder:text-grey-dark',
+            'h-12 md:h-16 md:text-xl w-full rounded-2xl bg-grey-light p-6 font-bold text-black-3 cursor-pointer focus:outline-purple dark:bg-black-2 dark:text-white dark:placeholder:text-grey-dark',
             error ? 'outline outline-red focus:outline-2' : null
           )}
           name="word"
@@ -40,7 +40,7 @@ export function Search() {
           }}
           onBlur={handleBlur}
         />
-        <p className="text-red mt-2">{error ? error : null}</p>
+        <p className="mt-2 text-red">{error ? error : null}</p>
         <button className="absolute right-6 top-4 md:top-6" type="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"

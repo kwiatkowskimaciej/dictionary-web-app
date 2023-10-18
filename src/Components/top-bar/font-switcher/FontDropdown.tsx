@@ -5,7 +5,7 @@ const fonts = ['sans', 'serif', 'mono'];
 export function FontDropdown({ open }: { open: boolean }) {
   return (
     <div
-      className="absolute pb-4 border rounded-lg border-grey-medium w-36 -right-2 h-fit top-8 z-10 bg-white dark:bg-black-1"
+      className="absolute z-10 pb-4 bg-white rounded-lg shadow-[0_5px_30px_0_rgba(0,0,0,0.10)] w-44 -right-2 h-fit top-8 cursor-pointer dark:bg-black-1 dark:shadow-purple"
       hidden={!open}
     >
       {fonts.map((font) => {

@@ -1,7 +1,8 @@
 import { Howl } from 'howler';
+import { twMerge } from 'tailwind-merge';
 
 interface Props {
-  src: string;
+  src?: string;
 }
 
 export function PlayButton({ src }: Props) {
@@ -14,16 +15,32 @@ export function PlayButton({ src }: Props) {
   };
 
   return (
-    <div
+    <button
       className="w-12 h-12 md:w-[75px] md:h-[75px] cursor-pointer"
-      onClick={() => play(src)}
+      disabled={src == null}
+      onClick={() => play(src!)}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
-        <g fill="#A445ED" fillRule="evenodd">
-          <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
-          <path d="M29 27v21l21-10.5z" />
+        <g className="group" fillRule="evenodd">
+          <circle
+            className={twMerge(
+              'fill-purple hover:opacity-100',
+              src == null && 'fill-grey-medium hover:opacity-25'
+            )}
+            cx="37.5"
+            cy="37.5"
+            r="37.5"
+            opacity=".25"
+          />
+          <path
+            className={twMerge(
+              'fill-purple group-hover:fill-white',
+              src == null && 'fill-grey-light group-hover:fill-grey-light'
+            )}
+            d="M29 27v21l21-10.5z"
+          />
         </g>
       </svg>
-    </div>
+    </button>
   );
 }

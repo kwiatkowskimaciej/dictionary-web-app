@@ -1,8 +1,8 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { twMerge } from 'tailwind-merge';
-import Image from 'next/image';
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);

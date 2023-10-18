@@ -1,8 +1,10 @@
+import { Homonym } from "./Homonym";
+
 interface Props {
   partOfSpeech: string;
   definitions: Definition[];
-  synonyms?: [];
-  antonyms?: [];
+  synonyms?: string[];
+  antonyms?: string[];
 }
 
 interface Definition {
@@ -17,14 +19,16 @@ export function Meaning({
   antonyms,
 }: Props) {
   return (
-    <div className="mt-7">
-      <div className="flex items-center gap-4 mb-8">
-        <span className="italic font-bold text-lg">{partOfSpeech}</span>
-        <div className="border-t w-full h-1px border-grey-medium"></div>
+    <div className="mt-8 md:mt-10">
+      <div className="flex items-center gap-4 mb-8 md:mb-10">
+        <span className="text-lg italic font-bold md:text-2xl">
+          {partOfSpeech}
+        </span>
+        <div className="w-full border-t h-1px border-grey-medium"></div>
       </div>
-      <div className="text-grey-dark">Meaning</div>
+      <div className="text-grey-dark md:text-xl">Meaning</div>
       <div>
-        <ul className="list-disc marker:text-purple ml-4 text-[15px] text-black-3 mt-4 flex flex-col gap-3 dark:text-white">
+        <ul className="list-disc marker:text-purple ml-4 text-[15px] text-black-3 mt-4 flex flex-col gap-4 dark:text-white md:text-lg">
           {definitions.map((definition, index) => {
             return (
               <li key={index}>
@@ -39,29 +43,11 @@ export function Meaning({
           })}
         </ul>
       </div>
-      {synonyms?.length != 0 && (
-        <div className="flex gap-6 mt-6 flex-wrap">
-          <span className="text-grey-dark">Synonyms</span>
-          {synonyms?.map((synonym, index) => {
-            return (
-              <span key={index} className="text-purple font-bold">
-                {synonym}
-              </span>
-            );
-          })}
-        </div>
+      {synonyms && synonyms.length > 0 && (
+        <Homonym title="Synonyms" homonyms={synonyms} />
       )}
-      {antonyms?.length != 0 && (
-        <div className="flex gap-6 mt-6 flex-wrap">
-          <span className="text-grey-dark">Antonyms</span>
-          {antonyms?.map((antonym, index) => {
-            return (
-              <span key={index} className="text-purple font-bold">
-                {antonym}
-              </span>
-            );
-          })}
-        </div>
+      {antonyms && antonyms.length > 0 && (
+        <Homonym title="Antonyms" homonyms={antonyms} />
       )}
     </div>
   );
