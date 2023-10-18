@@ -1,6 +1,6 @@
 'use client';
 
-import { useFontState } from '@/providers/FontProvider';
+import { useFontState } from '@/Providers/FontProvider';
 import { FontDropdown } from './FontDropdown';
 import { useState } from 'react';
 
